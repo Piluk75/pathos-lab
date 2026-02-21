@@ -1,0 +1,23 @@
+backend:
+  name: github
+  repo: Piluk75/pathos-lab  # Asegúrate de que el repositorio en GitHub se llame así
+  branch: main
+
+media_folder: "assets/img"
+public_folder: "/assets/img"
+
+collections:
+  - name: "portfolio"
+    label: "Proyectos de Portfolio"
+    folder: "_portfolio"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Título del Proyecto", name: "title", widget: "string"}
+      - {label: "Categoría (Ej: Consultoría)", name: "category", widget: "string"}
+      - {label: "Imagen Principal", name: "featured_image", widget: "image"}
+      - {label: "Galería de Fotos", name: "gallery", widget: "list", field: {label: "Imagen", name: "image", widget: "image"}}
+      - {label: "El Reto", name: "challenge", widget: "text"}
+      - {label: "La Solución", name: "solution", widget: "text"}
+      - {label: "Los Resultados", name: "results", widget: "text"}
+      - {label: "Enlace al Proyecto", name: "url", widget: "string", required: false}
