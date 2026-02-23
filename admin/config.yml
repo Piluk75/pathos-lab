@@ -1,10 +1,9 @@
 backend:
-  name: github
-  repo: Piluk75/pathos-lab  # Asegúrate de que el repositorio en GitHub se llame así
+  name: git-gateway
   branch: main
 
-media_folder: "assets/img"
-public_folder: "/assets/img"
+media_folder: "public/images"
+public_folder: "/images"
 
 collections:
   - name: "portfolio"
@@ -21,7 +20,7 @@ collections:
       - {label: "La Solución", name: "solution", widget: "text"}
       - {label: "Los Resultados", name: "results", widget: "text"}
       - {label: "Enlace al Proyecto", name: "url", widget: "string", required: false}
-- name: "ajustes"
+  - name: "ajustes"
     label: "Ajustes de la Web"
     files:
       - name: "general"
