@@ -21,3 +21,11 @@ collections:
       - {label: "La Solución", name: "solution", widget: "text"}
       - {label: "Los Resultados", name: "results", widget: "text"}
       - {label: "Enlace al Proyecto", name: "url", widget: "string", required: false}
+- name: "ajustes"
+    label: "Ajustes de la Web"
+    files:
+      - name: "general"
+        label: "General"
+        file: "_data/ajustes.yml"
+        fields:
+          - {label: "Logo (WebP)", name: "logo", widget: "image"}
