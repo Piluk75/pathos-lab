@@ -33,7 +33,7 @@ const Navbar: React.FC = () => {
   return (
     <nav 
       className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-6'
+        scrolled || isOpen ? 'bg-white/90 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-6'
       }`}
       aria-label="Navegación principal"
     >
@@ -86,7 +86,7 @@ const Navbar: React.FC = () => {
       {/* Mobile Menu */}
       <div 
         id="mobile-menu"
-        className={`md:hidden fixed inset-0 bg-white z-40 transform transition-transform duration-300 ease-in-out ${
+        className={`md:hidden fixed inset-0 bg-white z-50 transform transition-transform duration-300 ease-in-out ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
         style={{ top: '60px' }}
