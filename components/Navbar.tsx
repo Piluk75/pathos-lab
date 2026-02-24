@@ -93,12 +93,13 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div 
-        id="mobile-menu"
-        className={`md:hidden fixed inset-0 bg-white z-50 transform transition-transform duration-300 ease-in-out ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
-        style={{ top: '60px' }}
+<div 
+  id="mobile-menu"
+  className={`md:hidden fixed inset-0 z-[999] transform transition-transform duration-300 ease-in-out ${
+    isOpen ? 'translate-x-0' : 'translate-x-full'
+  }`}
+  style={{ top: '0', backgroundColor: 'white' }}
+>
       >
         <div className="flex flex-col p-8 gap-6">
           {navItems.map((item) => (
