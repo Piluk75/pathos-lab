@@ -41,7 +41,7 @@ const Navbar: React.FC = () => {
         {/* Logo */}
         <Link to="/" className="flex items-center group" aria-label="Pathos Inicio">
           <img 
-            src="/logo.webp" 
+            src="/images/logo-pathos.webp" 
             alt="Pathos Lab Logo" 
             className="h-12 w-auto group-hover:scale-105 transition-transform duration-300"
             referrerPolicy="no-referrer"
