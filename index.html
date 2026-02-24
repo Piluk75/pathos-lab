@@ -33,56 +33,8 @@
       @font-face { font-display: swap; }
     </style>
 
-    <!-- Tailwind CSS (CDN for Runtime as requested) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              pathos: {
-                primary: '#0066FF',
-                dark: '#0f172a', /* Darker blue/slate for better contrast */
-                cyan: '#00D4FF',
-                purple: '#7C3AED',
-                bg: '#F8FAFC',
-                text: '#1E293B'
-              }
-            },
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              display: ['Poppins', 'sans-serif'],
-            },
-            animation: {
-              'float': 'float 6s ease-in-out infinite',
-              'float-delayed': 'float 6s ease-in-out 3s infinite',
-              'float-subtle': 'float-subtle 4s ease-in-out infinite',
-              'float-subtle-delayed': 'float-subtle 4s ease-in-out 2s infinite',
-              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-              'blob': 'blob 7s infinite',
-              'spin-slow': 'spin 15s linear infinite',
-              'reverse-spin': 'spin 20s linear infinite reverse',
-            },
-            keyframes: {
-              float: {
-                '0%, 100%': { transform: 'translateY(0)' },
-                '50%': { transform: 'translateY(-20px)' },
-              },
-              'float-subtle': {
-                '0%, 100%': { transform: 'translateY(0)' },
-                '50%': { transform: 'translateY(-8px)' },
-              },
-              blob: {
-                '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                '100%': { transform: 'translate(0px, 0px) scale(1)' },
-              }
-            }
-          }
-        }
-      }
-    </script>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/index.css">
 
     <!-- Critical CSS & Animation Base -->
     <style>
@@ -226,17 +178,7 @@
       ]
     }
     </script>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.4",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
+
     <!-- Google Calendar Appointment Scheduling -->
     <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
     <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
@@ -249,15 +191,12 @@
     <!-- Chatbot ElevenLabs Patch & Widget -->
     <script>
     (function () {
-      // --- utilidades ---
       function hideBrandingIn(root) {
         try {
-          // Busca el enlace oficial del crédito
           root.querySelectorAll('a[href="https://elevenlabs.io/conversational-ai"]').forEach(a => {
             const p = a.closest('p');
             if (p) p.style.setProperty('display','none','important');
           });
-          // Por si cambian el markup: detectar el texto
           root.querySelectorAll('p').forEach(p => {
             const t = (p.textContent || '').trim();
             if (t.includes('Powered by ElevenLabs')) {
@@ -273,7 +212,6 @@
         mo.observe(root, { childList: true, subtree: true });
       }
 
-      // --- parche de attachShadow: convertir 'closed' en 'open' ---
       const _attach = Element.prototype.attachShadow;
       if (_attach) {
         Element.prototype.attachShadow = function(init) {
@@ -284,7 +222,6 @@
         };
       }
 
-      // observar también el documento principal
       observeRoot(document);
     })();
     </script>
