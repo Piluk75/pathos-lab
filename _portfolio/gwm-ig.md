@@ -1,10 +1,10 @@
 ---
-title: GWM-IG
+title: GWM IG
 category: CONSULTORÍA
 featured_image: /images/gwm.webp
 gallery: []
-challenge: Reto 1
-solution: Solución 1
-results: Resultados 1
+challenge: Sin presencia digital en un sector altamente competitivo.
+solution: Diseño mobile-first, SEO avanzado y carga instantánea.
+results: Presencia digital sólida que aporta valor y seguridad.
 url: https://gwm-ig.com/
 ---
