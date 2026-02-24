@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
           <div className="col-span-1 md:col-span-2">
             <Link to="/" className="flex items-center mb-6">
               <img 
-                src="/logo.webp" 
+                src="/images/logo-pathos.webp" 
                 alt="Pathos Lab Logo" 
                 className="h-16 w-auto"
                 referrerPolicy="no-referrer"
