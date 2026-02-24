@@ -159,10 +159,6 @@ const Portfolio: React.FC = () => {
                       </div>
                     )}
 
-                    <h3 className="font-display text-5xl lg:text-6xl font-bold mb-8 text-slate-900 tracking-tight">
-                      {project.title}
-                    </h3>
-
                     <ul className="space-y-8 mb-12">
                       {project.challenge && (
                         <li className="flex flex-col gap-2">
