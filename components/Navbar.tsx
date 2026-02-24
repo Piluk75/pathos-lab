@@ -43,7 +43,7 @@ const Navbar: React.FC = () => {
           <img 
             src="/images/logo-pathos.webp" 
             alt="Pathos Lab Logo" 
-            className="h-12 w-auto group-hover:scale-105 transition-transform duration-300"
+            className="h-16 w-auto group-hover:scale-105 transition-transform duration-300"
             referrerPolicy="no-referrer"
           />
         </Link>
