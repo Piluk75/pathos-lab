@@ -832,6 +832,16 @@ const Admin: React.FC = () => {
                                 </div>
                             ))}
                         </div>
+
+                        {/* Botón inferior para añadir caso */}
+                        <div className="flex justify-center pt-8 pb-4">
+                            <button
+                                onClick={addProject}
+                                className="flex items-center gap-3 px-10 py-5 bg-white text-slate-950 rounded-[2rem] font-bold hover:bg-slate-100 transition-all hover:scale-105 active:scale-95 shadow-2xl"
+                            >
+                                <Plus size={24} /> Añadir un nuevo caso de éxito
+                            </button>
+                        </div>
                     </div>
                 )}
 
