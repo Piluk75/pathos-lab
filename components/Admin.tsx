@@ -733,6 +733,15 @@ const Admin: React.FC = () => {
                         <div className="grid gap-16">
                             {portfolio.map((project, index) => (
                                 <div key={project.id} className="relative group/card bg-slate-900/40 backdrop-blur-3xl border border-white/10 p-12 rounded-[4rem] shadow-2xl hover:border-pathos-cyan/20 transition-all">
+                                    {/* Delete Button */}
+                                    <button
+                                        onClick={() => deleteProject(project.id)}
+                                        className="absolute top-10 right-10 w-12 h-12 flex items-center justify-center text-slate-600 hover:text-red-500 transition-colors bg-white/5 rounded-2xl hover:bg-red-500/10 z-20"
+                                        title="Eliminar Proyecto"
+                                    >
+                                        <Trash2 size={24} />
+                                    </button>
+
                                     <div className="absolute -left-16 top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-4">
                                         <button onClick={() => moveProject(index, 'up')} disabled={index === 0} className="w-12 h-12 rounded-full bg-slate-900 border border-white/10 flex items-center justify-center hover:bg-pathos-cyan text-white transition-all disabled:opacity-10"><ArrowUp size={20} /></button>
                                         <div className="text-center font-black text-2xl text-slate-800">{index + 1}</div>
@@ -740,19 +749,31 @@ const Admin: React.FC = () => {
                                     </div>
 
                                     <div className="flex flex-col xl:flex-row gap-16">
-                                        <div className="flex-1 space-y-10">
-                                            <div className="flex justify-between gap-4">
-                                                <div className="flex-1">
-                                                    <input className="bg-transparent border-b border-white/10 text-3xl font-bold text-white mb-4 w-full focus:border-pathos-cyan outline-none tracking-tight" value={project.title} placeholder="Nombre del proyecto..." onChange={(e) => updateProjectField(project.id, 'title', e.target.value)} />
-                                                    <div className="flex items-center gap-3 text-pathos-cyan font-black text-[10px] tracking-[0.2em] uppercase">
-                                                        <Boxes size={16} />
-                                                        <input className="bg-transparent outline-none w-full" value={project.category} onChange={(e) => updateProjectField(project.id, 'category', e.target.value.toUpperCase())} />
-                                                    </div>
-                                                </div>
-                                                <button onClick={() => deleteProject(project.id)} className="w-12 h-12 flex items-center justify-center text-slate-600 hover:text-red-500 transition-colors bg-white/5 rounded-2xl hover:bg-red-500/10"><Trash2 size={24} /></button>
+                                        <div className="flex-1 space-y-6">
+                                            <div className="space-y-2">
+                                                <label className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 ml-1">Nombre del Proyecto (Título)</label>
+                                                <input
+                                                    className="bg-slate-950/40 border border-white/5 text-2xl font-bold text-white p-4 rounded-2xl w-full focus:border-pathos-cyan outline-none tracking-tight"
+                                                    value={project.title}
+                                                    placeholder="Ej: Moon Water Technology"
+                                                    onChange={(e) => updateProjectField(project.id, 'title', e.target.value)}
+                                                />
                                             </div>
 
-                                            <div className="grid gap-8">
+                                            <div className="space-y-2">
+                                                <label className="text-[10px] font-black uppercase tracking-[0.2em] text-pathos-cyan ml-1">Tipo de Negocio / Categoría (En Mayúsculas)</label>
+                                                <div className="relative group/cat">
+                                                    <Boxes className="absolute left-4 top-1/2 -translate-y-1/2 text-pathos-cyan/50 group-focus-within/cat:text-pathos-cyan" size={18} />
+                                                    <input
+                                                        className="bg-slate-950/60 border border-pathos-cyan/30 text-pathos-cyan font-black pl-12 pr-4 py-4 rounded-xl w-full focus:border-pathos-cyan outline-none tracking-[0.1em] text-sm"
+                                                        value={project.category}
+                                                        placeholder="Ej: RESTAURACIÓN, CONSULTORÍA..."
+                                                        onChange={(e) => updateProjectField(project.id, 'category', e.target.value.toUpperCase())}
+                                                    />
+                                                </div>
+                                            </div>
+
+                                            <div className="grid gap-8 pt-4">
                                                 {[
                                                     { field: 'challenge', label: 'El Reto', color: 'text-pathos-cyan' },
                                                     { field: 'solution', label: 'La Solución', color: 'text-blue-400' },
