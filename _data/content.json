@@ -1,0 +1,191 @@
+{
+  "hero": {
+    "title_part1": "Diseño Web",
+    "title_part2": "IA",
+    "title_part3": "que conecta.",
+    "title_part4": "Automatización que",
+    "title_part5": "escala.",
+    "description": "En Pathos Lab creamos la arquitectura digital que tu negocio necesita para dominar Google y ser recomendado por ChatGPT. Diseño web de alta gama y sistemas inteligentes para liberar tu tiempo.",
+    "cta_primary": "Hablemos",
+    "cta_secondary": "Ver Soluciones",
+    "label1_value": "100%",
+    "label1_text": "Compromiso",
+    "label2_value": "24/7",
+    "label2_text": "Operatividad"
+  },
+  "services": {
+    "header": {
+      "title_main": "Arquitectura Digital:",
+      "title_accent1": "Estética",
+      "title_accent2": "Operativa",
+      "subtitle": "En Pathos no elegimos entre diseño y rentabilidad. Construimos ambos.",
+      "description": "Tener una web bonita que nadie visita no sirve de nada. Tener muchas visitas pero ahogarte en tareas manuales para atenderlas, tampoco. Diseñamos el escaparate perfecto para atraer a tus clientes y el motor interno para que no pierdas ni un minuto en gestionarlos."
+    },
+    "escaparate": {
+      "badge": "Solución 1: El Escaparate",
+      "title": "Diseño Web IA & Identidad Digital",
+      "quote": "Creamos plataformas ultrarrápidas optimizadas para SEO y GEO que no son solo un folleto digital, son tu mejor comercial trabajando 24/7.",
+      "features": [
+        {
+          "title": "Diseño Web de Alta Gama",
+          "desc": "Proyectamos la autoridad y confianza de tu negocio desde el primer segundo. Sin plantillas genéricas, solo diseño estratégico alineado con tu identidad y optimizado para LLMs."
+        },
+        {
+          "title": "Dominio Local (SEO/GEO)",
+          "desc": "Logramos que los nuevos buscadores de IA y mapas te pongan en el mapa. Preparamos tu web para que ChatGPT y Google te encuentren y te recomienden a tus clientes locales antes que a la competencia."
+        },
+        {
+          "title": "Rendimiento y Seguridad IA",
+          "desc": "Construimos con código limpio (sin gestores pesados). El resultado es una web que carga al instante, que los algoritmos de IA premian y que es virtualmente imposible de hackear."
+        }
+      ],
+      "result_label": "El Resultado:",
+      "result_text": "Una marca que transmite autoridad, capta tráfico local y convierte visitas en clientes.",
+      "cta_text": "Ver Casos de Éxito / Portfolio"
+    },
+    "motor": {
+      "badge": "Solución 2: El Motor",
+      "title": "Automatización de Procesos con IA",
+      "quote": "Una vez que te encuentran, implementamos agentes de IA para que no pierdas ni un segundo en tareas manuales.",
+      "features": [
+        {
+          "title": "Sincronización Inteligente",
+          "desc": "Conectamos tu web con tu CRM y herramientas de gestión mediante flujos de trabajo automatizados que eliminan el error humano."
+        },
+        {
+          "title": "Agentes de IA Autónomos",
+          "desc": "Diseñamos sistemas que responden, agendan y clasifican leads por ti, permitiéndote escalar tu negocio local sin aumentar costes fijos."
+        },
+        {
+          "title": "Eficiencia Operativa 2.0",
+          "desc": "Erradicamos la carga manual repetitiva. Transformamos procesos lentos en sistemas ágiles que liberan tu tiempo y mejoran la rentabilidad."
+        }
+      ],
+      "result_label": "El Resultado:",
+      "result_text": "Un negocio que escala de forma automática y eficiente.",
+      "cta_text": "Ver cómo funciona"
+    }
+  },
+  "benefits": {
+    "header": {
+      "title_main": "El efecto Pathos en",
+      "title_accent": "tu día a día",
+      "description": "La transformación no es abstracta. Se nota en los números y en la tranquilidad con la que operas."
+    },
+    "list": [
+      {
+        "title": "Visibilidad Premium",
+        "desc": "Tu web trabajará por ti 24/7, dando una imagen profesional incluso cuando duermes."
+      },
+      {
+        "title": "Tiempo Recuperado",
+        "desc": "Al automatizar la gestión de esos clientes nuevos, recuperas horas para liderar y tomar decisiones."
+      },
+      {
+        "title": "Coherencia Total",
+        "desc": "Tu presencia digital y tus procesos internos hablarán el mismo idioma. Sin fricción."
+      }
+    ]
+  },
+  "problem": {
+    "badge": "Imagen + Eficiencia",
+    "title_main": "¿De qué sirve ser el mejor si ",
+    "title_accent1": "nadie te ve",
+    "title_mid": " o si ",
+    "title_accent2": "no tienes tiempo",
+    "title_end": "?",
+    "description": "Muchos negocios sufren de dos males silenciosos:",
+    "list": [
+      {
+        "title": "1. Invisibilidad",
+        "desc": "Su web parece de 2010, no transmite confianza y pierden clientes antes de empezar.",
+        "image": "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&q=60&w=800"
+      },
+      {
+        "title": "2. Saturación",
+        "desc": "Cuando consiguen clientes, se ahogan en tareas administrativas manuales.",
+        "image": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=60&w=800"
+      }
+    ]
+  },
+  "digital_trap": {
+    "title_part1": "La ",
+    "title_accent": "Trampa Digital",
+    "main_text_part1": "Es tener una web bonita que ",
+    "main_text_highlight1": "no vende",
+    "main_text_part2": ", o tener muchas ventas que ",
+    "main_text_highlight2": "te quitan la vida",
+    "main_text_part3": ".",
+    "bottom_text": "Necesitas equilibrio: Una marca magnética hacia fuera y un reloj suizo por dentro."
+  },
+  "process": {
+    "header": {
+      "title_main": "De la Idea a la Realidad en ",
+      "title_accent": "3 Pasos",
+      "description": "Un proceso claro para un resultado transformador."
+    },
+    "list": [
+      {
+        "title": "Auditoría & Diseño",
+        "description": "Definimos tu identidad visual y detectamos tus cuellos de botella operativos."
+      },
+      {
+        "title": "Construcción Dual",
+        "description": "Diseñamos tu nueva web mientras programamos tus automatizaciones. Todo crece junto."
+      },
+      {
+        "title": "Lanzamiento",
+        "description": "Estrenas nueva imagen y nueva forma de trabajar. Te entregamos las llaves de un negocio renovado."
+      }
+    ]
+  },
+  "cta": {
+    "title": "¿Listo para transformar tu negocio? 🚀",
+    "description_part1": "Agenda una pequeña auditoría de ",
+    "description_highlight": "15 minutos",
+    "description_part2": " y descubre el potencial oculto de tu marca.",
+    "button_text": "Agenda tu Auditoría Gratuita",
+    "bottom_text": "Únete a los negocios que ya operan con Pathos Intelligence."
+  },
+  "faq": {
+    "header": {
+      "title": "Preguntas",
+      "accent": "Frecuentes",
+      "description": "Resolvemos tus dudas sobre cómo la Arquitectura Digital puede transformar tu negocio."
+    },
+    "list": [
+      {
+        "question": "¿Qué es Pathos IA?",
+        "answer": "Pathos IA es un estudio de tecnología con enfoque humano que combina dos servicios: diseño web e identidad digital por un lado, y automatización de procesos por el otro. Nuestra filosofía es que la tecnología solo tiene sentido cuando mejora la calidad de vida real de las personas. El nombre viene de ahí: pathos, la capacidad de conectar emocionalmente. Somos Intelligence & Empathy."
+      },
+      {
+        "question": "¿Qué servicios ofrece Pathos IA?",
+        "answer": "Ofrecemos dos pilares principales: 1. Diseño Web & Identidad Digital (Tu Imagen): Creamos webs que no son solo escaparates, sino herramientas de venta. 2. Automatización de Procesos (Tu Motor): Conectamos tus herramientas digitales para que tu negocio funcione solo en las partes repetitivas."
+      },
+      {
+        "question": "¿Puedo contratar sólo el diseño web o sólo la automatización?",
+        "answer": "Sí, puedes contratar cada servicio por separado. Dicho eso, nuestro enfoque más potente es el integral: diseñar tu presencia digital y tus procesos internos al mismo tiempo, de manera que hablen el mismo idioma desde el primer día."
+      },
+      {
+        "question": "¿Para qué tipo de negocios trabajáis?",
+        "answer": "Trabajamos con negocios que sufren alguno de estos dos problemas: son invisibles digitalmente o están saturados operativamente."
+      },
+      {
+        "question": "¿Reemplazáis a mi equipo con inteligencia artificial?",
+        "answer": "No. Nuestra filosofía es la contraria: automatizamos lo aburrido y repetitivo precisamente para que tu equipo tenga libertad de hacer lo que ninguna IA puede hacer: conectar, sentir y crear."
+      },
+      {
+        "question": "¿Cómo es el proceso de trabajo?",
+        "answer": "Trabajamos en tres pasos: 1. Auditoría & Diseño, 2. Construcción Dual, 3. Lanzamiento."
+      },
+      {
+        "question": "¿Cuánto tiempo tarda un proyecto?",
+        "answer": "Depende del alcance, pero al trabajar diseño y automatización en paralelo, los tiempos son más eficientes que si los hicieras por separado con distintos proveedores."
+      },
+      {
+        "question": "¿Hacéis webs con SEO incluido?",
+        "answer": "Sí. La optimización técnica está incluida, incluyendo GEO (Generative Engine Optimization) para ser recomendado por modelos de IA como ChatGPT."
+      }
+    ]
+  }
+}

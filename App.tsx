@@ -18,6 +18,8 @@ import CookiePolicy from './components/CookiePolicy';
 import Demo from './components/Demo';
 import Blog from './components/Blog';
 import BlogPost from './components/BlogPost';
+import Admin from './components/Admin';
+import { ContentProvider } from './context/ContentContext';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -54,7 +56,7 @@ const HomePage = () => {
     <div className="font-sans antialiased text-slate-900 bg-pathos-bg">
       <a href="#main" className="skip-link">Saltar al contenido principal</a>
       <Navbar />
-      
+
       <main id="main">
         <Hero />
         <Problem />
@@ -72,21 +74,24 @@ const HomePage = () => {
 
 function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/faq" element={<FAQ />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/aviso-legal" element={<LegalNotice />} />
-        <Route path="/privacidad" element={<PrivacyPolicy />} />
-        <Route path="/cookies" element={<CookiePolicy />} />
-        <Route path="/demo" element={<Demo />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/:id" element={<BlogPost />} />
-      </Routes>
-    </Router>
+    <ContentProvider>
+      <Router>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/aviso-legal" element={<LegalNotice />} />
+          <Route path="/privacidad" element={<PrivacyPolicy />} />
+          <Route path="/cookies" element={<CookiePolicy />} />
+          <Route path="/demo" element={<Demo />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<BlogPost />} />
+        </Routes>
+      </Router>
+    </ContentProvider>
   );
 }
 

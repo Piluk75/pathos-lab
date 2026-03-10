@@ -3,6 +3,7 @@ import { Star, Clock, Users, TrendingUp, Globe, ArrowRight } from 'lucide-react'
 import { motion } from 'motion/react';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import { useContent } from '../context/ContentContext';
 
 const stats = [
   { icon: <Star className="w-6 h-6" />, value: '100%', label: 'Compromiso' },
@@ -11,37 +12,20 @@ const stats = [
   { icon: <TrendingUp className="w-6 h-6" />, value: '98%', label: 'Satisfacción' },
 ];
 
-// Esto lee automáticamente todos los archivos .md de la carpeta _portfolio
-const projectFiles = import.meta.glob('/_portfolio/*.md', { eager: true, as: 'raw' });
-
-// Función para parsear el frontmatter de los archivos markdown
-function parseFrontmatter(raw: string) {
-  const match = raw.match(/^---\n([\s\S]*?)\n---/);
-  if (!match) return {};
-  const fm: Record<string, string> = {};
-  match[1].split('\n').forEach(line => {
-    const [key, ...rest] = line.split(':');
-    if (key && rest.length) {
-      fm[key.trim()] = rest.join(':').trim().replace(/^["']|["']$/g, '');
-    }
-  });
-  return fm;
-}
-
-const projects = Object.values(projectFiles).map((raw) => parseFrontmatter(raw as string));
-
 const Portfolio: React.FC = () => {
+  const { portfolio } = useContent();
+
   return (
     <div className="bg-pathos-bg min-h-screen text-slate-900 font-sans selection:bg-pathos-primary/30">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="relative pt-40 pb-24 overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none opacity-50"></div>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-pathos-primary/5 via-transparent to-transparent pointer-events-none"></div>
-        
+
         <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 text-center">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -49,8 +33,8 @@ const Portfolio: React.FC = () => {
           >
             Servicios de Desarrollo Web Profesional
           </motion.div>
-          
-          <motion.h1 
+
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -58,8 +42,8 @@ const Portfolio: React.FC = () => {
           >
             Nuestro <span className="bg-gradient-to-r from-pathos-primary via-pathos-dark to-indigo-600 bg-clip-text text-transparent">Portfolio</span>
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -67,7 +51,7 @@ const Portfolio: React.FC = () => {
           >
             Transformamos ideas en experiencias digitales excepcionales. Cada proyecto es único, diseñado para potenciar tu negocio y conectar con tu audiencia.
           </motion.p>
-          
+
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {stats.map((stat, idx) => (
               <motion.div
@@ -100,13 +84,13 @@ const Portfolio: React.FC = () => {
             </p>
           </div>
 
-          {projects.length === 0 ? (
+          {!portfolio || portfolio.length === 0 ? (
             <div className="text-center py-24 text-slate-400 text-xl">
               Próximamente — estamos preparando nuestros casos de éxito.
             </div>
           ) : (
             <div className="space-y-48">
-              {projects.map((project, idx) => (
+              {portfolio.map((project: any, idx: number) => (
                 <div
                   key={idx}
                   className={`flex flex-col ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-20 items-start`}

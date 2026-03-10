@@ -1,0 +1,24 @@
+[
+  {
+    "id": "moon-water-technology",
+    "title": "Moon Water Technology",
+    "category": "DESARROLLO",
+    "featured_image": "/images/moonwater.webp",
+    "challenge": "Necesidad de una plataforma robusta para gestión de recursos hídricos.",
+    "solution": "Sistema distribuido con agentes de IA para monitoreo continuo.",
+    "results": "Optimización del 30% en la detección de fugas y gestión eficiente.",
+    "url": "https://moonwater.io/",
+    "order": 1
+  },
+  {
+    "id": "gwm-ig",
+    "title": "GWM IG",
+    "category": "CONSULTORÍA",
+    "featured_image": "/images/gwm.webp",
+    "challenge": "Sin presencia digital en un sector altamente competitivo.",
+    "solution": "Diseño mobile-first, SEO avanzado y carga instantánea.",
+    "results": "Presencia digital sólida que aporta valor y seguridad.",
+    "url": "https://gwm-ig.com/",
+    "order": 2
+  }
+]
