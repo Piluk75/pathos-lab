@@ -5,7 +5,7 @@ import {
     Lock, ShieldAlert, LogOut, Key, HelpCircle
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { supabase } from '../lib/supabase';
+import { supabase, isSupabaseConfigured } from '../lib/supabase';
 
 interface Project {
     id: string;
@@ -39,6 +39,10 @@ const Admin: React.FC = () => {
         }
 
         const fetchData = async () => {
+            if (!isSupabaseConfigured) {
+                setLoading(false);
+                return;
+            }
             try {
                 const { data: contentData, error: contentError } = await supabase
                     .from('site_content')
@@ -92,6 +96,10 @@ const Admin: React.FC = () => {
     };
 
     const handleSaveGeneral = async () => {
+        if (!isSupabaseConfigured) {
+            alert('Supabase no está configurado en Netlify. No se pueden guardar cambios.');
+            return;
+        }
         setSaving(true);
         try {
             const { error } = await supabase
@@ -109,6 +117,10 @@ const Admin: React.FC = () => {
     };
 
     const handleSavePortfolio = async () => {
+        if (!isSupabaseConfigured) {
+            alert('Supabase no está configurado.');
+            return;
+        }
         setSaving(true);
         try {
             const { error: deleteError } = await supabase
@@ -144,6 +156,10 @@ const Admin: React.FC = () => {
     };
 
     const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (!isSupabaseConfigured) {
+            alert('Supabase no está configurado. No se pueden subir imágenes.');
+            return;
+        }
         const file = e.target.files?.[0];
         if (!file || !uploadingFor) return;
 
@@ -298,10 +314,21 @@ const Admin: React.FC = () => {
         );
     }
 
-    if (loading || !content) return (
+    if (loading || (!content && isSupabaseConfigured)) return (
         <div className="min-h-screen bg-[#0F172A] text-white flex flex-col items-center justify-center p-8">
             <div className="w-16 h-16 border-4 border-pathos-cyan border-t-transparent rounded-full animate-spin mb-4"></div>
             <p className="font-display text-xl animate-pulse">Sincronizando con Pathos Lab...</p>
+        </div>
+    );
+
+    if (!isSupabaseConfigured && !content) return (
+        <div className="min-h-screen bg-[#0F172A] text-white flex flex-col items-center justify-center p-8 text-center max-w-md mx-auto">
+            <ShieldAlert size={48} className="text-amber-500 mb-6" />
+            <h2 className="text-2xl font-bold mb-4 font-display italic">Error de Configuración</h2>
+            <p className="text-slate-400 mb-8 leading-relaxed">
+                Supabase no está configurado correctamente en Netlify. Debes añadir las variables <code className="text-pathos-cyan">VITE_SUPABASE_URL</code> y <code className="text-pathos-cyan">VITE_SUPABASE_ANON_KEY</code>.
+            </p>
+            <Link to="/" className="px-8 py-4 bg-white/10 rounded-2xl font-bold hover:bg-white/20 transition-all">Volver al inicio</Link>
         </div>
     );
 

@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { supabase } from '../lib/supabase';
+import { supabase, isSupabaseConfigured } from '../lib/supabase';
 import initialContent from '../_data/content.json';
 
 interface ContentContextType {
@@ -17,6 +17,10 @@ export const ContentProvider: React.FC<{ children: React.ReactNode }> = ({ child
 
     useEffect(() => {
         const fetchData = async () => {
+            if (!isSupabaseConfigured) {
+                setLoading(false);
+                return;
+            }
             try {
                 // Fetch Content
                 const { data: contentData, error: contentError } = await supabase
