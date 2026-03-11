@@ -2,7 +2,7 @@
 /images/*
   Cache-Control: public, max-age=31536000, immutable
 
-# Caching for JavaScript and CSS (hashed files by Vite)
+# Caching for JavaScript y CSS (archivos con hash de Vite)
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
@@ -13,4 +13,5 @@
   X-XSS-Protection: 1; mode=block
   Referrer-Policy: strict-origin-when-cross-origin
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-  Content-Security-Policy: upgrade-insecure-requests;
+  Content-Security-Policy: upgrade-insecure-requests
+  Permissions-Policy: microphone=(self "https://elevenlabs.io"), camera=(), geolocation=()
