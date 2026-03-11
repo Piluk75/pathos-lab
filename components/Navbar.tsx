@@ -41,20 +41,21 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <nav 
-        className={`fixed w-full z-50 transition-all duration-300 ${
-          scrolled || isOpen ? 'bg-white shadow-sm py-3' : 'bg-transparent py-6'
-        }`}
+      <nav
+        className={`fixed w-full z-50 transition-all duration-300 ${scrolled || isOpen ? 'bg-white shadow-sm py-3' : 'bg-transparent py-6'
+          }`}
         aria-label="Navegación principal"
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex justify-between items-center">
           {/* Logo */}
           <Link to="/" className="flex items-center group" aria-label="Pathos Inicio">
-            <img 
-              src="/images/logo-pathos.webp" 
-              alt="Pathos Lab Logo" 
+            <img
+              src="/images/logo-pathos.webp"
+              alt="Pathos Lab Logo"
               className="h-20 w-auto group-hover:scale-105 transition-transform duration-300"
               referrerPolicy="no-referrer"
+              width={200}
+              height={80}
             />
           </Link>
 
@@ -62,7 +63,7 @@ const Navbar: React.FC = () => {
           <div className="hidden md:flex items-center gap-8">
             <div className="flex gap-6">
               {navItems.map((item) => (
-                <a 
+                <a
                   key={item.label}
                   href={getHref(item)}
                   target={item.external ? "_blank" : undefined}
@@ -73,7 +74,7 @@ const Navbar: React.FC = () => {
                 </a>
               ))}
             </div>
-            <Link 
+            <Link
               to="/contact"
               className="px-6 py-2.5 bg-pathos-dark text-white rounded-full text-sm font-semibold hover:bg-pathos-primary transition-colors shadow-lg hover:shadow-pathos-primary/25 transform hover:-translate-y-0.5 duration-200"
             >
@@ -82,7 +83,7 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Mobile Toggle */}
-          <button 
+          <button
             className="md:hidden text-pathos-dark p-2 z-[1001] relative"
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"}
@@ -96,7 +97,7 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu - fuera del nav para evitar problemas de z-index */}
       {isOpen && (
-        <div 
+        <div
           id="mobile-menu"
           style={{
             position: 'fixed',
@@ -114,7 +115,7 @@ const Navbar: React.FC = () => {
           }}
         >
           {navItems.map((item) => (
-            <a 
+            <a
               key={item.label}
               href={getHref(item)}
               target={item.external ? "_blank" : undefined}
@@ -133,7 +134,7 @@ const Navbar: React.FC = () => {
               {item.label}
             </a>
           ))}
-          <Link 
+          <Link
             to="/contact"
             style={{
               marginTop: '16px',
