@@ -22,24 +22,41 @@ export const ContentProvider: React.FC<{ children: React.ReactNode }> = ({ child
                 return;
             }
             try {
-                // Fetch Content
-                const { data: contentData, error: contentError } = await supabase
-                    .from('site_content')
-                    .select('data')
-                    .eq('id', 1)
-                    .single();
+                // Fetch Content (Use parallel fetch if available)
+                const fetchPromise = (window as any).__PATHOS_CONTENT_FETCH__;
+                let contentData;
 
-                if (!contentError && contentData) {
+                if (fetchPromise) {
+                    const result = await fetchPromise;
+                    contentData = Array.isArray(result) ? result[0] : result;
+                } else {
+                    const { data } = await supabase
+                        .from('site_content')
+                        .select('data')
+                        .eq('id', 1)
+                        .single();
+                    contentData = data;
+                }
+
+                if (contentData && contentData.data) {
                     setContent(contentData.data);
                 }
 
-                // Fetch Portfolio
-                const { data: portfolioData, error: portfolioError } = await supabase
-                    .from('portfolio')
-                    .select('*')
-                    .order('order', { ascending: true });
+                // Fetch Portfolio (Use parallel fetch if available)
+                const portfolioPromise = (window as any).__PATHOS_PORTFOLIO_FETCH__;
+                let portfolioData;
 
-                if (!portfolioError && portfolioData) {
+                if (portfolioPromise) {
+                    portfolioData = await portfolioPromise;
+                } else {
+                    const { data } = await supabase
+                        .from('portfolio')
+                        .select('*')
+                        .order('order', { ascending: true });
+                    portfolioData = data;
+                }
+
+                if (portfolioData) {
                     setPortfolio(portfolioData);
                 }
 

@@ -9,16 +9,17 @@ import Benefits from './components/Benefits';
 import Process from './components/Process';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
-import Portfolio from './components/Portfolio';
-import FAQ from './components/FAQ';
-import Contact from './components/Contact';
-import LegalNotice from './components/LegalNotice';
-import PrivacyPolicy from './components/PrivacyPolicy';
-import CookiePolicy from './components/CookiePolicy';
-import Demo from './components/Demo';
-import Blog from './components/Blog';
-import BlogPost from './components/BlogPost';
-import Admin from './components/Admin';
+const Admin = React.lazy(() => import('./components/Admin'));
+const Portfolio = React.lazy(() => import('./components/Portfolio'));
+const FAQ = React.lazy(() => import('./components/FAQ'));
+const Contact = React.lazy(() => import('./components/Contact'));
+const LegalNotice = React.lazy(() => import('./components/LegalNotice'));
+const PrivacyPolicy = React.lazy(() => import('./components/PrivacyPolicy'));
+const CookiePolicy = React.lazy(() => import('./components/CookiePolicy'));
+const Demo = React.lazy(() => import('./components/Demo'));
+const Blog = React.lazy(() => import('./components/Blog'));
+const BlogPost = React.lazy(() => import('./components/BlogPost'));
+
 import { ContentProvider } from './context/ContentContext';
 
 const ScrollToTop = () => {
@@ -77,19 +78,21 @@ function App() {
     <ContentProvider>
       <Router>
         <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/admin" element={<Admin />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/faq" element={<FAQ />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/aviso-legal" element={<LegalNotice />} />
-          <Route path="/privacidad" element={<PrivacyPolicy />} />
-          <Route path="/cookies" element={<CookiePolicy />} />
-          <Route path="/demo" element={<Demo />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:id" element={<BlogPost />} />
-        </Routes>
+        <React.Suspense fallback={<div className="min-h-screen bg-pathos-bg" />}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/aviso-legal" element={<LegalNotice />} />
+            <Route path="/privacidad" element={<PrivacyPolicy />} />
+            <Route path="/cookies" element={<CookiePolicy />} />
+            <Route path="/demo" element={<Demo />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:id" element={<BlogPost />} />
+          </Routes>
+        </React.Suspense>
       </Router>
     </ContentProvider>
   );

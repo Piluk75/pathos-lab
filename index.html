@@ -14,6 +14,19 @@
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <link rel="canonical" href="https://pathos-lab.com/" />
 
+  <!-- Preload & Parallel Fetch -->
+  <link rel="modulepreload" href="/index.tsx" />
+  <script>
+    // Start fetching content immediately to parallelize with JS loading
+    window.__PATHOS_CONTENT_FETCH__ = fetch('https://waenhjdkmrrkgyifswui.supabase.co/rest/v1/site_content?select=data&id=eq.1', {
+      headers: { 'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndhZW5oamRrbXJya2d5aWZzd3VpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMxMzQxOTAsImV4cCI6MjA4ODcxMDE5MH0._yCH4T_tcaEQ7slHdZKCKdXgRTGGJJUl6txusrNOvjg' }
+    }).then(r => r.json());
+
+    window.__PATHOS_PORTFOLIO_FETCH__ = fetch('https://waenhjdkmrrkgyifswui.supabase.co/rest/v1/portfolio?select=*&order=order.asc', {
+      headers: { 'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndhZW5oamRrbXJya2d5aWZzd3VpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMxMzQxOTAsImV4cCI6MjA4ODcxMDE5MH0._yCH4T_tcaEQ7slHdZKCKdXgRTGGJJUl6txusrNOvjg' }
+    }).then(r => r.json());
+  </script>
+
   <!-- Preload Critical Assets -->
   <link rel="preload" href="/images/logo-pathos.webp" as="image" />
 
