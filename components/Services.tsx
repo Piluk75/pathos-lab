@@ -15,7 +15,7 @@ const Services: React.FC = () => {
       {/* Background Image Layer */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <img
-          src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80"
+          src={services.header.bg_image || "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80"}
           alt=""
           loading="lazy"
           decoding="async"

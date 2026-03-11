@@ -13,7 +13,7 @@ export const blogPosts = [
     date: '24 Feb 2026',
     author: 'Pathos Team',
     category: 'Estrategia',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/logo-pathos.webp',
     content: `
       <p>El panorama digital está cambiando a una velocidad vertiginosa. Durante décadas, el SEO (Search Engine Optimization) ha sido el rey indiscutible para captar tráfico. Sin embargo, estamos entrando en la era del GEO (Generative Engine Optimization).</p>
       
@@ -37,7 +37,7 @@ export const blogPosts = [
     date: '20 Feb 2026',
     author: 'Pathos Team',
     category: 'Automatización',
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/logo-pathos.webp',
     content: `
       <p>El tiempo es el recurso más valioso de cualquier empresario. A menudo, las tareas administrativas consumen la mayor parte de la jornada, dejando poco espacio para la estrategia y el crecimiento.</p>
       
@@ -59,7 +59,7 @@ export const blogPosts = [
     date: '15 Feb 2026',
     author: 'Pathos Team',
     category: 'Diseño',
-    image: 'https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/logo-pathos.webp',
     content: `
       <p>Ya no es suficiente con tener una web "bonita". En 2026, el diseño debe ser dinámico. La IA nos permite adaptar la interfaz según el comportamiento del usuario en tiempo real.</p>
       
@@ -73,22 +73,22 @@ const Blog: React.FC = () => {
   return (
     <div className="bg-pathos-bg min-h-screen text-slate-900 font-sans selection:bg-pathos-primary/30">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="relative pt-40 pb-24 overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none opacity-50"></div>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-pathos-primary/5 via-transparent to-transparent pointer-events-none"></div>
-        
+
         <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 text-center">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="inline-flex items-center px-4 py-1.5 rounded-full border border-pathos-primary/20 bg-pathos-primary/5 text-pathos-primary text-xs font-bold uppercase tracking-widest mb-10"
           >
             Insights, Estrategia y Tecnología
           </motion.div>
-          
-          <motion.h1 
+
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
@@ -96,8 +96,8 @@ const Blog: React.FC = () => {
           >
             Nuestro <span className="bg-gradient-to-r from-pathos-primary via-pathos-dark to-indigo-600 bg-clip-text text-transparent">Blog</span>
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -123,9 +123,9 @@ const Blog: React.FC = () => {
               >
                 {/* Image Container */}
                 <div className="relative aspect-[16/10] overflow-hidden">
-                  <img 
-                    src={post.image} 
-                    alt="" 
+                  <img
+                    src={post.image}
+                    alt=""
                     loading="lazy"
                     decoding="async"
                     width="1200"
@@ -162,7 +162,7 @@ const Blog: React.FC = () => {
                   </p>
 
                   <div className="mt-auto">
-                    <Link 
+                    <Link
                       to={`/blog/${post.id}`}
                       className="inline-flex items-center gap-2 text-pathos-primary font-bold group/link"
                     >

@@ -463,6 +463,20 @@ const Admin: React.FC = () => {
                                     <input className="bg-slate-950/40 border border-blue-500/30 p-5 rounded-2xl outline-none focus:border-blue-500 w-full text-blue-400" value={content.services.header.title_accent2} onChange={(e) => setContent({ ...content, services: { ...content.services, header: { ...content.services.header, title_accent2: e.target.value } } })} />
                                 </div>
                                 <textarea className="w-full bg-slate-950/40 border border-white/5 p-5 rounded-3xl outline-none focus:border-blue-500 h-32" value={content.services.header.description} onChange={(e) => setContent({ ...content, services: { ...content.services, header: { ...content.services.header, description: e.target.value } } })} />
+                                <div
+                                    onClick={() => {
+                                        setUploadingFor({ type: 'general', path: 'services.header.bg_image' });
+                                        fileInputRef.current?.click();
+                                    }}
+                                    className="relative h-24 bg-slate-950/40 border-2 border-dashed border-white/10 rounded-2xl flex items-center justify-center cursor-pointer hover:bg-white/5 transition-all overflow-hidden"
+                                >
+                                    {content.services.header.bg_image ? (
+                                        <img src={content.services.header.bg_image} className="absolute inset-0 w-full h-full object-cover opacity-30" />
+                                    ) : null}
+                                    <span className="relative z-10 text-xs font-bold text-slate-500 flex items-center gap-2">
+                                        <Upload size={14} /> Fondo de Sección Servicios
+                                    </span>
+                                </div>
                             </div>
                         </div>
 
