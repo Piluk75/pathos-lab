@@ -65,7 +65,7 @@ const Portfolio: React.FC = () => {
                   {stat.icon}
                 </div>
                 <div className="font-display text-4xl font-bold mb-2 tracking-tight text-slate-900">{stat.value}</div>
-                <div className="text-slate-500 text-xs uppercase tracking-[0.2em] font-semibold">{stat.label}</div>
+                <div className="text-slate-600 text-xs uppercase tracking-[0.2em] font-semibold">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -85,7 +85,7 @@ const Portfolio: React.FC = () => {
           </div>
 
           {!portfolio || portfolio.length === 0 ? (
-            <div className="text-center py-24 text-slate-400 text-xl">
+            <div className="text-center py-24 text-slate-600 text-xl">
               Próximamente — estamos preparando nuestros casos de éxito.
             </div>
           ) : (

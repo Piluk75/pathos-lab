@@ -28,7 +28,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ question, answer, isOpen,
         <span className={`font-display text-xl lg:text-2xl font-bold transition-colors duration-300 ${isOpen ? 'text-pathos-primary' : 'text-slate-900 group-hover:text-pathos-primary'}`}>
           {question}
         </span>
-        <div className={`flex-shrink-0 w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-300 ${isOpen ? 'bg-pathos-primary border-pathos-primary text-white rotate-180' : 'bg-white border-slate-200 text-slate-400 group-hover:border-pathos-primary group-hover:text-pathos-primary'}`}>
+        <div className={`flex-shrink-0 w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-300 ${isOpen ? 'bg-pathos-primary border-pathos-primary text-white rotate-180' : 'bg-white border-slate-300 text-slate-600 group-hover:border-pathos-primary group-hover:text-pathos-primary'}`}>
           {isOpen ? <Minus size={20} aria-hidden="true" focusable="false" /> : <Plus size={20} aria-hidden="true" focusable="false" />}
         </div>
       </button>

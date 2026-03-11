@@ -28,7 +28,7 @@ const Contact: React.FC = () => {
     const initCalendar = () => {
       if (window.calendar && window.calendar.schedulingButton && calendarButtonRef.current) {
         if (isCalendarInitialized.current) return;
-        
+
         calendarButtonRef.current.innerHTML = '';
         window.calendar.schedulingButton.load({
           url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1OjTENxdt61NaanjbceRcMLO2-fFOXuRTJTfS-V95m-lQahO0bhD2qJb1NrtY_pR-bQnyd3k4_?gv=true',
@@ -74,13 +74,13 @@ const Contact: React.FC = () => {
   return (
     <div className="bg-pathos-bg min-h-screen text-slate-900 font-sans selection:bg-pathos-primary/30">
       <Navbar />
-      
+
       <section className="relative pt-40 pb-24 overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none opacity-50"></div>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-pathos-primary/5 via-transparent to-transparent pointer-events-none"></div>
-        
+
         <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-16"
@@ -98,7 +98,7 @@ const Contact: React.FC = () => {
           </motion.div>
 
           <div className="grid lg:grid-cols-5 gap-12 items-start">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
@@ -111,53 +111,53 @@ const Contact: React.FC = () => {
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <label htmlFor="name" className="text-sm font-bold text-slate-700 ml-1 uppercase tracking-wider">Nombre *</label>
-                        <input 
-                          type="text" 
+                        <input
+                          type="text"
                           id="name"
                           required
                           placeholder="Tu nombre completo"
                           className="w-full px-6 py-4 rounded-2xl bg-white border border-slate-200 focus:border-pathos-primary focus:ring-4 focus:ring-pathos-primary/10 transition-all outline-none"
                           value={formState.nombre}
-                          onChange={(e) => setFormState({...formState, nombre: e.target.value})}
+                          onChange={(e) => setFormState({ ...formState, nombre: e.target.value })}
                         />
                       </div>
                       <div className="space-y-2">
                         <label htmlFor="email" className="text-sm font-bold text-slate-700 ml-1 uppercase tracking-wider">Email *</label>
-                        <input 
-                          type="email" 
+                        <input
+                          type="email"
                           id="email"
                           required
                           placeholder="tu@email.com"
                           className="w-full px-6 py-4 rounded-2xl bg-white border border-slate-200 focus:border-pathos-primary focus:ring-4 focus:ring-pathos-primary/10 transition-all outline-none"
                           value={formState.email}
-                          onChange={(e) => setFormState({...formState, email: e.target.value})}
+                          onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                         />
                       </div>
                     </div>
                     <div className="space-y-2">
                       <label htmlFor="company" className="text-sm font-bold text-slate-700 ml-1 uppercase tracking-wider">Empresa</label>
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         id="company"
                         placeholder="Nombre de tu empresa"
                         className="w-full px-6 py-4 rounded-2xl bg-white border border-slate-200 focus:border-pathos-primary focus:ring-4 focus:ring-pathos-primary/10 transition-all outline-none"
                         value={formState.empresa}
-                        onChange={(e) => setFormState({...formState, empresa: e.target.value})}
+                        onChange={(e) => setFormState({ ...formState, empresa: e.target.value })}
                       />
                     </div>
                     <div className="space-y-2">
                       <label htmlFor="message" className="text-sm font-bold text-slate-700 ml-1 uppercase tracking-wider">Mensaje</label>
-                      <textarea 
+                      <textarea
                         id="message"
                         required
                         rows={5}
                         placeholder="Cuéntanos sobre tus necesidades de automatización y diseño..."
                         className="w-full px-6 py-4 rounded-2xl bg-white border border-slate-200 focus:border-pathos-primary focus:ring-4 focus:ring-pathos-primary/10 transition-all outline-none resize-none"
                         value={formState.mensaje}
-                        onChange={(e) => setFormState({...formState, mensaje: e.target.value})}
+                        onChange={(e) => setFormState({ ...formState, mensaje: e.target.value })}
                       ></textarea>
                     </div>
-                    <button 
+                    <button
                       type="submit"
                       disabled={isSubmitting}
                       className="w-full py-5 bg-pathos-dark text-white rounded-2xl font-bold text-lg flex items-center justify-center gap-3 hover:bg-pathos-primary transition-all transform hover:-translate-y-1 shadow-xl shadow-pathos-dark/20 group disabled:opacity-70 disabled:cursor-not-allowed"
@@ -172,7 +172,7 @@ const Contact: React.FC = () => {
                   </form>
                 </>
               ) : (
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   className="text-center py-12"
@@ -182,7 +182,7 @@ const Contact: React.FC = () => {
                   </div>
                   <h2 className="font-display text-4xl font-bold text-slate-900 mb-4">¡Mensaje Recibido!</h2>
                   <p className="text-slate-600 text-lg mb-8">Gracias por confiar en Pathos. Nuestro equipo revisará tu propuesta y te contactaremos en menos de 24 horas.</p>
-                  <button 
+                  <button
                     onClick={() => setIsSubmitted(false)}
                     className="px-8 py-4 border border-slate-200 rounded-full font-bold text-slate-600 hover:bg-slate-50 transition-all"
                   >
@@ -193,7 +193,7 @@ const Contact: React.FC = () => {
             </motion.div>
 
             <div className="lg:col-span-2 space-y-8">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3 }}
@@ -206,9 +206,9 @@ const Contact: React.FC = () => {
                       <Mail size={24} />
                     </div>
                     <div>
-                      <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Email</p>
+                      <p className="text-xs font-bold text-slate-600 uppercase tracking-widest mb-1">Email</p>
                       <p className="text-slate-900 font-bold text-lg">hola@pathos-lab.com</p>
-                      <p className="text-slate-500 text-sm">Respuesta en menos de 24h</p>
+                      <p className="text-slate-600 text-sm font-medium">Respuesta en menos de 24h</p>
                     </div>
                   </div>
                   <div className="flex gap-5">
@@ -216,15 +216,15 @@ const Contact: React.FC = () => {
                       <MessageSquare size={24} />
                     </div>
                     <div>
-                      <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Chat / Llamada en Vivo</p>
+                      <p className="text-xs font-bold text-slate-600 uppercase tracking-widest mb-1">Chat / Llamada en Vivo</p>
                       <p className="text-slate-900 font-bold text-lg">Disponible en la web</p>
-                      <p className="text-slate-500 text-sm">Sin esperas</p>
+                      <p className="text-slate-600 text-sm font-medium">Sin esperas</p>
                     </div>
                   </div>
                 </div>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.4 }}

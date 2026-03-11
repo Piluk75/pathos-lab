@@ -53,12 +53,12 @@ const Hero: React.FC = () => {
           <div className="mt-12 pt-8 border-t border-white/10 flex items-center gap-6">
             <div className="flex flex-col">
               <span className="text-2xl font-bold font-display text-white">{hero.label1_value}</span>
-              <span className="text-xs text-slate-400 uppercase tracking-wider">{hero.label1_text}</span>
+              <span className="text-xs text-slate-300 uppercase tracking-wider">{hero.label1_text}</span>
             </div>
             <div className="w-px h-8 bg-white/20"></div>
             <div className="flex flex-col">
               <span className="text-2xl font-bold font-display text-white">{hero.label2_value}</span>
-              <span className="text-xs text-slate-400 uppercase tracking-wider">{hero.label2_text}</span>
+              <span className="text-xs text-slate-300 uppercase tracking-wider">{hero.label2_text}</span>
             </div>
           </div>
         </div>
@@ -84,11 +84,11 @@ const Hero: React.FC = () => {
             {/* Element 1: Code/Web */}
             <div className="absolute top-[10%] left-[10%] p-4 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/10 shadow-xl animate-float">
               <div className="flex items-center gap-3">
-                <div className="p-2 bg-blue-500/20 rounded-lg text-blue-400">
+                <div className="p-2 bg-blue-500/20 rounded-lg text-blue-300">
                   <Code size={20} aria-hidden="true" focusable="false" />
                 </div>
                 <div>
-                  <div className="text-xs text-slate-400">Rendimiento</div>
+                  <div className="text-xs text-slate-300">Rendimiento</div>
                   <div className="text-sm font-bold text-white">Carga Ultrarrápida</div>
                 </div>
               </div>
@@ -97,11 +97,11 @@ const Hero: React.FC = () => {
             {/* Element 2: AI/Automation */}
             <div className="absolute bottom-[20%] right-[0%] p-4 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/10 shadow-xl animate-float-delayed">
               <div className="flex items-center gap-3">
-                <div className="p-2 bg-purple-500/20 rounded-lg text-purple-400">
+                <div className="p-2 bg-purple-500/20 rounded-lg text-purple-300">
                   <Cpu size={20} aria-hidden="true" focusable="false" />
                 </div>
                 <div>
-                  <div className="text-xs text-slate-400">Agente IA</div>
+                  <div className="text-xs text-slate-300">Agente IA</div>
                   <div className="text-sm font-bold text-white flex items-center gap-2">
                     Chatbot 24/7 <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" aria-hidden="true"></span>
                   </div>
