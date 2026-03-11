@@ -130,7 +130,30 @@
     })();
   </script>
   <elevenlabs-convai agent-id="agent_5401khpfbchjfgrbjyrg5ppywkyy"></elevenlabs-convai>
-  <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+  <script>
+    // Lazy load the heavy ElevenLabs widget after a delay or interaction
+    (function () {
+      let loaded = false;
+      function loadWidget() {
+        if (loaded) return;
+        loaded = true;
+        const script = document.createElement("script");
+        script.src = "https://unpkg.com/@elevenlabs/convai-widget-embed";
+        script.async = true;
+        document.body.appendChild(script);
+      }
+
+      // Load after 3 seconds of idle time
+      window.addEventListener('load', () => {
+        setTimeout(loadWidget, 3500);
+      });
+
+      // Or on first interaction (scroll/click)
+      ['mousedown', 'touchstart', 'scroll'].forEach(evt => {
+        window.addEventListener(evt, loadWidget, { once: true, passive: true });
+      });
+    })();
+  </script>
 
   <script type="module" src="/index.tsx"></script>
 </body>
