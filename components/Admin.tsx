@@ -78,7 +78,7 @@ const Admin: React.FC = () => {
         setSaving(true);
         setLoginError('');
 
-        const ADMIN_PASSWORD = 'admin';
+        const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD || 'admin';
         if (password === ADMIN_PASSWORD) {
             localStorage.setItem('pathos_admin_token', 'logged_in');
             setToken('logged_in');
