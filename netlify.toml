@@ -7,7 +7,21 @@
   [headers.values]
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
-    Content-Security-Policy = "default-src 'self' https: 'unsafe-inline' 'unsafe-eval' data: blob:; connect-src 'self' https: wss://api.us.elevenlabs.io wss://api.elevenlabs.io; microphone 'self'"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    Content-Security-Policy = "upgrade-insecure-requests; default-src 'self' https: 'unsafe-inline' 'unsafe-eval' data: blob:; connect-src 'self' https: wss://api.us.elevenlabs.io wss://api.elevenlabs.io https://waenhjdkmrrkgyifswui.supabase.co;"
+    Permissions-Policy = "microphone=(self 'https://elevenlabs.io'), camera=(), geolocation=()"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
 
 [[redirects]]
   from = "/*"

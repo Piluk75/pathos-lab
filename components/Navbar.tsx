@@ -56,6 +56,7 @@ const Navbar: React.FC = () => {
               referrerPolicy="no-referrer"
               width={200}
               height={80}
+              fetchPriority="high"
             />
           </Link>
 
