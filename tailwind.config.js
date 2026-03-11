@@ -14,7 +14,8 @@ export default {
           cyan: '#00D4FF',
           purple: '#7C3AED',
           bg: '#F8FAFC',
-          text: '#1E293B'
+          text: '#1E293B',
+          brand: '#F2E8DC'
         }
       },
       fontFamily: {
