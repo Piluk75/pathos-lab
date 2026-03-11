@@ -1,4 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" fill="white"/>
-  <path d="M10 8h7.5c4.14 0 7.5 3.36 7.5 7.5S21.64 23 17.5 23H14v5H10V8zm4 11h3.5c1.93 0 3.5-1.57 3.5-3.5S15.93 12 14 12V19z" fill="#001A57"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <linearGradient id="logoGrad" x1="10%" y1="10%" x2="90%" y2="90%">
+      <stop offset="0%" style="stop-color:#1a5fcc;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#0c42b5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#050e7a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <path d="M 248,118 L 181,119 L 158,125 L 137,135 L 124,145 L 113,156 L 103,170 L 97,181 L 97,184 L 95,185 L 88,209 L 86,233 L 86,344 L 87,360 L 90,370 L 95,381 L 103,393 L 119,407 L 141,417 L 158,419 L 158,225 L 163,206 L 171,191 L 182,177 L 189,177 L 190,493 L 197,494 L 221,486 L 238,474 L 250,460 L 254,453 L 261,432 L 261,131 L 259,126 L 254,121 Z" fill="url(#logoGrad)"/>
+  <path d="M 102,41 L 91,57 L 85,73 L 83,104 L 84,112 L 86,114 L 93,115 L 102,106 L 121,94 L 148,87 L 284,87 L 299,90 L 320,99 L 337,113 L 349,129 L 356,145 L 359,161 L 359,176 L 355,193 L 347,210 L 331,227 L 310,239 L 296,244 L 289,244 L 289,324 L 308,322 L 325,318 L 352,308 L 353,306 L 367,299 L 382,288 L 404,264 L 420,236 L 420,233 L 426,220 L 431,200 L 431,147 L 422,113 L 413,94 L 395,67 L 386,57 L 373,46 L 354,33 L 333,23 L 314,17 L 288,13 L 153,14 L 137,18 L 122,25 L 112,33 L 110,33 Z" fill="url(#logoGrad)"/>
 </svg>
